@@ -9,5 +9,8 @@
 	<classpathentry kind="lib" path="/home/admin/eclipse-workspace/anAnalysisOfComplexity/lib/algs4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="/home/admin/eclipse-workspace/anAnalysisOfComplexity/lib/libpract.jar"/>
+	<classpathentry kind="lib" path="lib/algs4.jar"/>
+	<classpathentry kind="lib" path="/home/admin/git/anAnalysisOfComplexity/anAnalysisOfComplexity/lib/algs4.jar"/>
+	<classpathentry kind="lib" path="/home/admin/git/anAnalysisOfComplexity/anAnalysisOfComplexity/lib/libpract.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
