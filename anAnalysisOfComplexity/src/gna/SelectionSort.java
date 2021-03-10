@@ -12,9 +12,11 @@ public class SelectionSort extends SortingAlgorithm {
 	 */
 	public long sort(Comparable[] array) throws IllegalArgumentException {
 		if (array == null) {
-			throw new IllegalArgumentException("argument 'array' must not be null.");
-		}
-		throw new RuntimeException("not implemented"); // TODO
+			throw new IllegalArgumentException("argument 'array' must not be null.");}
+		long nmbrComparisons = 0;
+		if (array.length == 1) {
+			return nmbrComparisons;}
+
 	}
 
 	/**
