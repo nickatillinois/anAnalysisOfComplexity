@@ -5,6 +5,7 @@ import libpract.SortingAlgorithm;
 import java.util.Scanner;
 import org.junit.Test;
 import java.util.Arrays;
+import java.util.Collections;
 
 import edu.princeton.cs.algs4.StdRandom;
 
@@ -20,20 +21,22 @@ public class SortingAlgorithmsTest {
 		System.out.println("Enter array length: ");
 		int n = s.nextInt();
 		int MAX = 1000000;
-		int [] a = new int[n];
+		Comparable[] a = new Comparable[n];
 		int i;
 		for (i = 0; i < n; i++)
 			a[i] = StdRandom.uniform(-MAX, MAX);
 		test_if_sorted(a);
-		int[] empty_array = new int[0];
+		Comparable[] empty_array = new Comparable[0];
 		test_if_sorted(empty_array);
-		int[] one_element_array = new int[1];
+		Comparable[] one_element_array = new Comparable[1];
 		one_element_array[0] = 1;
 		test_if_sorted(one_element_array);
-		int [] already_sorted_array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		Comparable[] already_sorted_array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		test_if_sorted(already_sorted_array);
-		int [] boring_array = {0, 0, 0, 1, 1, 1, 2, 2, 1, -1, 55555555, 6, 6, 6, 555, 555, 555, 7, 7, 7, 7, 7, 7, 7, 1000000000, 31, 31, 31, 3, 31, 31};
+		Comparable[] boring_array = {0, 0, 0, 1, 1, 1, 2, 2, 1, -1, 55555555, 6, 6, 6, 555, 555, 555, 7, 7, 7, 7, 7, 7, 7, 1000000000, 31, 31, 31, 3, 31, 31};
 		test_if_sorted(boring_array);
+		Comparable[] fractionArray = {0.1, 0.2, 0.569, 0.995, 0.58, 0.2, 0.0002, 0.999, 0};
+		test_if_sorted(fractionArray);
 		n = 1000;
 		for (i = 0; i < n; i++)
 			a[i] = StdRandom.uniform(-MAX, MAX);
@@ -66,13 +69,26 @@ public class SortingAlgorithmsTest {
 		for (i = 0; i < n; i++)
 			a[i] = StdRandom.uniform(-MAX, MAX);
 		test_if_sorted(a);
+		Comparable[] letter_rij = {"a", "g", "r", "h", "i", "k", "p", "z", "b"};
+		test_if_sorted(letter_rij);
+		Comparable[] komma_rij = {0.2444545, 0.0055, 0.0000041, 0.000000000001, 1, 0, 0, 0.975, 8585.558585};
+		test_if_sorted(komma_rij);
 	}
-	@Test
-	public void test_if_sorted(int [] unsorted_array) {
-		int [] copy = unsorted_array.clone();
-		Arrays.sort(copy);
-		assert copy.equals(insertionSort(unsorted_array));
-		assert copy.equals(selectionSort(unsorted_array));
-		assert copy.equals(quickSort(unsorted_array));
+	public void test_if_sorted(Comparable[] unsorted_array) {
+		Comparable[] copy1 = unsorted_array.clone();
+		Comparable[] copy2 = unsorted_array.clone();
+		Comparable[] copy3 = unsorted_array.clone();
+		InsertionSort insertionSort_object = new InsertionSort();
+		SelectionSort selectionSort_object = new SelectionSort();
+		QuickSort quickSort_object = new QuickSort();
+		insertionSort_object.sort(copy1);
+		for (int i = 0; i < copy1.length - 1; i++) {
+			assert (copy1[i].compareTo(copy1[i + 1]) <= 0) == true;}
+		selectionSort_object.sort(copy2);
+		for (int i = 0; i < copy2.length - 1; i++) {
+			assert (copy2[i].compareTo(copy2[i + 1]) <= 0) == true;}
+		quickSort_object.sort(copy3);
+		for (int i = 0; i < copy3.length - 1; i++) {
+			assert (copy3[i].compareTo(copy3[i + 1]) <= 0) == true;}
 	}
 }
