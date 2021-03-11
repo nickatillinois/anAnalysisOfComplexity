@@ -26,7 +26,7 @@ public class SelectionSort extends SortingAlgorithm {
 			}
 			exchange(array, smallest, i);
 		}
-		return comparisons;
+		return comparisons + 1;
 	}
 
 	public long getComparisons() {

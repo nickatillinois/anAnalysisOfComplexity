@@ -15,7 +15,24 @@ public class QuickSort extends SortingAlgorithm{
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");
 		}
-		throw new RuntimeException("not implemented"); // TODO
+		int n = array.length;
+		if (n <= 1) {return 0;}
+		int subN;
+		if (n % 2 == 0) {
+			Comparable[] links = new Comparable[n/2];
+			Comparable[] rechts = new Comparable[n/2];
+		}
+		if (n % 2 != 0) {
+			Comparable[] links = new Comparable[n/2];
+			Comparable[] rechts = new Comparable[n/2 + 1];
+		}
+		if (even) {subN = n / 2;}
+		
+		
+		Comparable[] links, rechts;
+		for (int i = 0; i < array.length; i++) {
+			if (less(array[0], array[i])
+		}
 	}
 
 	/**
