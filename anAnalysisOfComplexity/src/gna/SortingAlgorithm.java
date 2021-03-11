@@ -4,20 +4,23 @@ import edu.princeton.cs.algs4.StdOut;
 
 // Do not remove the "implements libpract.SortingAlgorithm".
 public abstract class SortingAlgorithm implements libpract.SortingAlgorithm{
-	private static boolean less (Comparable v, Comparable w)
+	// vergelijkt items: als v kleiner is dan w dan true.
+	protected static boolean less (Comparable v, Comparable w)
 	{return v.compareTo(w) < 0;}
-	private static void exchange(Comparable[] a, int i, int j)
+	// verwisselt de items op positie i en j in array a.
+	protected static void exchange(Comparable[] a, int i, int j)
 	{Comparable t = a[i]; a[i] = a[j]; a[j] = t;}
-	private static void show(Comparable[] a)
+	// drukt de rij op het scherm
+	static void show(Comparable[] a)
 	{ for (int i = 0; i < a.length; i++)
 		StdOut.print(a[i] + " ");
 		StdOut.println();
 	}
+	// test of de array wel echt gesorteerd is
 	public static boolean isSorted(Comparable [] a)
 	{
 		for (int i = 1; i < a.length; i++)
 			if (less(a[i], a[i - 1])) return false;
-		int small
 		return true;
 	}
 	/**

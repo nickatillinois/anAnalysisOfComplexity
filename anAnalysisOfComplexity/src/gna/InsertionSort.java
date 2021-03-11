@@ -10,6 +10,7 @@ public class InsertionSort extends SortingAlgorithm {
 	 * 
 	 * @see super
 	 */
+	private int comparisons;
 	public long sort(Comparable[] array) throws IllegalArgumentException {
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");

@@ -5,6 +5,7 @@ package gna;
  *
  */
 public class QuickSort extends SortingAlgorithm{
+	private int comparisons;
 	/**
 	 * Sorts the given array using quick sort.
 	 * 
