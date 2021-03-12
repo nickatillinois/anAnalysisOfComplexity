@@ -5,38 +5,26 @@ package gna;
  * 
  */
 public class SelectionSort extends SortingAlgorithm {
-	private long comparisons;
 	/**
 	 * Sorts the given array using selection sort.
 	 * 
 	 * @see super
 	 */
 	public long sort(Comparable[] array) throws IllegalArgumentException {
+		comparisons = 0;
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");}
-		for (int i = 0; i < array.length; i++) {
-			int j = i + 1;
-			int smallest = i;
-			while (j<array.length) {
-				if (less(array[j], array[smallest])) {
-					smallest = j; 
-				}
-				comparisons++;
-				j++;
+		int n = array.length;
+		for (int i = 0; i < n; i++) {
+			int min = i;
+			for (int j = i + 1; j < n; j++) {
+				if (less(array[j], array[min])) {
+					min = j;}
 			}
-			exchange(array, smallest, i);
+			exchange(array, i, min);
 		}
-		return comparisons + 1;
-	}
-
-	public long getComparisons() {
 		return comparisons;
 	}
-
-	public void setComparisons(long comparisons) {
-		this.comparisons = comparisons;
-	}
-
 	/**
 	 * Constructor.
 	 */

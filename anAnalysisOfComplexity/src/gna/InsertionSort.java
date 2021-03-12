@@ -10,27 +10,19 @@ public class InsertionSort extends SortingAlgorithm {
 	 * 
 	 * @see super
 	 */
-	private long comparisons;
-	public long getComparisons() {
-		return comparisons;
-	}
-
-	public void setComparisons(long comparisons) {
-		this.comparisons = comparisons;
-	}
 
 	public long sort(Comparable[] array) throws IllegalArgumentException {
+		comparisons = 0;
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");
 		}
 		int n = array.length;
-		for(int i = 0; i < n; i++) {
+		for(int i = 1; i < n; i++) {
 			for (int j = i; j>0 && less(array[j], array[j - 1]); j--){
-				comparisons++;
-				exchange(array, j-1, j);
+				exchange(array, j, j-1);
 			}
 		}
-		return comparisons + 1;
+		return comparisons;
 	}
 
 	/**
