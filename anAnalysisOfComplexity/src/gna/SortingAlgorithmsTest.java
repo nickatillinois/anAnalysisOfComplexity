@@ -109,11 +109,12 @@ public class SortingAlgorithmsTest {
 	        System.out.println("An error occurred.");
 	        e.printStackTrace();
 	      }
-	    Comparable[] inversely = new Comparable[4000];
-	    int k = 4000;
+	    Comparable[] inversely = new Comparable[3000];
+	    int k = 0;
 	    i = 0;
-	    while (i < 4000) {
+	    while (i < 3000) {
 	    inversely[i] = k;
+	    k++;
 	    i++;}
 		//insertionSort_object.show(inversely);
 	    FileWriter myWriter = new FileWriter("filename.txt");
@@ -124,8 +125,11 @@ public class SortingAlgorithmsTest {
 				a[i] = StdRandom.uniform(-MAX, MAX);
 			}
 			//Stopwatch timer = new Stopwatch();
+			;
 			//double time = timer.elapsedTime();
+			//string = String.valueOf(insertionSort_object.sort(a));
 			string = String.valueOf(quickSort_object.sort(a));
+			//insertionSort_object.sort(a);
 			//StdOut.printf("%7d %7.1f ",  n, time);
 			//StdOut.printf("%5.1f\n",  time/prev);
 			//prev = time;
@@ -133,7 +137,7 @@ public class SortingAlgorithmsTest {
 			//System.out.printf("\n");
 		    try {
 		        
-		        myWriter.write(string);
+		       myWriter.write(string);
 		        myWriter.write("\n");
 		        
 		      } catch (IOException e) {

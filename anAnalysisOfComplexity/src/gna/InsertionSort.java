@@ -12,7 +12,7 @@ public class InsertionSort extends SortingAlgorithm {
 	 */
 
 	public long sort(Comparable[] array) throws IllegalArgumentException {
-		comparisons = 0;
+		exchanges = 0;
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");
 		}
@@ -22,7 +22,7 @@ public class InsertionSort extends SortingAlgorithm {
 				exchange(array, j, j-1);
 			}
 		}
-		return comparisons;
+		return exchanges;
 	}
 
 	/**

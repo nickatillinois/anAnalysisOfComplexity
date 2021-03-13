@@ -11,7 +11,7 @@ public class SelectionSort extends SortingAlgorithm {
 	 * @see super
 	 */
 	public long sort(Comparable[] array) throws IllegalArgumentException {
-		comparisons = 0;
+		exchanges = 0;
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");}
 		int n = array.length;
@@ -23,7 +23,7 @@ public class SelectionSort extends SortingAlgorithm {
 			}
 			exchange(array, i, min);
 		}
-		return comparisons;
+		return exchanges;
 	}
 	/**
 	 * Constructor.
