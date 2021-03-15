@@ -1,3 +1,4 @@
+//Grotendeels overgenomen van Algorithms, Sedgewick & Wayne, 2019.
 package gna;
 
 public class Stopwatch{

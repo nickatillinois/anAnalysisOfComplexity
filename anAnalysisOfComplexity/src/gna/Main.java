@@ -1,3 +1,4 @@
+//Grotendeels overgenomen van Algorithms, Sedgewick & Wayne, 2019.
 package gna;
 
 import java.util.Arrays;
@@ -12,10 +13,16 @@ public class Main {
 	 * 
 	 * You can replace this.
 	 */
+	
+	private static Stopwatch timer = new Stopwatch();
+	private static SelectionSort selectionSort_object = new SelectionSort();
+	private static InsertionSort insertionSort_object = new InsertionSort();
+	private static QuickSort quickSort_object = new QuickSort();
+	public static long count;
 	public static void main(String[] args)
 	{ // Print table of running times.
 		double prev = timeTrial(125);
-		for (int n = 250; true; n *= 2)
+		for (int n = 250; true; n += n)
 		{
 			double time = timeTrial(n);
 			StdOut.printf("%7d %7.1f", n, time);
@@ -25,15 +32,14 @@ public class Main {
 	}
 	public static double timeTrial(int n)
 	{
-		SelectionSort selectionSort_object = new SelectionSort();
-		InsertionSort insertionSort_object = new InsertionSort();
-		QuickSort quickSort_object = new QuickSort();
-		int MAX = 1000000;
+
+		
+		int MAX = 999999;
 		Comparable [] a = new Comparable[n];
 		for (int i = 0; i < n; i++)
-			a[i] = StdRandom.uniform(-MAX, MAX);
+			a[i] = StdRandom.uniform(-MAX, MAX + 1);
 		Stopwatch timer = new Stopwatch();
-		long count = insertionSort_object.sort(a);
+		count = insertionSort_object.sort(a);
 		return timer.elapsedTime();
 		
 	}

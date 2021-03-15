@@ -1,3 +1,4 @@
+//Grotendeels overgenomen van Algorithms, Sedgewick & Wayne, 2019.
 package gna;
 
 /**
@@ -12,7 +13,7 @@ public class InsertionSort extends SortingAlgorithm {
 	 */
 
 	public long sort(Comparable[] array) throws IllegalArgumentException {
-		exchanges = 0;
+		comparisons = 0;
 		if (array == null) {
 			throw new IllegalArgumentException("argument 'array' must not be null.");
 		}
@@ -22,7 +23,7 @@ public class InsertionSort extends SortingAlgorithm {
 				exchange(array, j, j-1);
 			}
 		}
-		return exchanges;
+		return comparisons;
 	}
 
 	/**
