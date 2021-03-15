@@ -133,7 +133,7 @@ public class SortingAlgorithmsTest {
 			//StdOut.printf("%7d %7.1f ",  n, time);
 			//StdOut.printf("%5.1f\n",  time/prev);
 			//prev = time;
-			System.out.println(string);
+			//System.out.println(string);
 			//System.out.printf("\n");
 		    try {
 		        
